@@ -1,0 +1,41 @@
+CREATE TABLE characters (
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+name TEXT,
+motto TEXT,
+species INTEGER,
+series_id INTEGER,
+author_id INTEGER
+);
+
+CREATE TABLE books (
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+title TEXT,
+year INT,
+series_id INTEGER
+-- belongs_to series
+);
+
+CREATE TABLE series (
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+title TEXT,
+author_id INTEGER,
+subgenre_id INTEGER
+);
+
+CREATE TABLE subgenres (
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+name TEXT,
+character_id INTEGER,
+book_id INTEGER
+);
+
+CREATE TABLE authors (
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+name TEXT
+);
+
+CREATE TABLE character_books (
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+book_id INTEGER,
+character_id INTEGER
+);
